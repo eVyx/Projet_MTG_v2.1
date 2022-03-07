@@ -21,13 +21,13 @@
         </nav>
     </header>
 
-    <div class="format">
+<div class="format">
         <br><br>
-                <form action="" method="GET">
+        <form action="" method="GET">
             Sélectionner le type : 
             <select id="typeCards" name="type">   
                 <option id="selection" value="selection">Sélectionner le type</option>
-                <option id="crea" value="crea"> Créature</option>
+                <option id="creature" value="creature"> Créature</option>
                 <option id="instant" value="instant">Ephémère</option>
                 <option id="sorcery" value="sorcery">Rituel</option>
                 <option id="enchant" value="enchant">Enchantement</option>
@@ -36,7 +36,9 @@
             </select>
         </br>
         </form>
+        </div>
     </div>
+</div>
 
 
     <div class="icon_display">

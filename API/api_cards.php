@@ -3,20 +3,20 @@
     //json error
     $tab = array( //On crée simplement un tableau d'un json d'erreur
         'error' => 'Pas de Json',);
-    //test si le paramétre task existe
     
     //test si l'url contient le paramètre 'ALL'
-if (isset($_GET['ALL'])) { // $_GET : c'est la super globale qui permet d'aller lire (api_cards.php?ALL) ; le isset est en relation avec le $_GET
+if (isset($_GET['ALL'])) {
     //afficher et encoder un json le résultat de la méthode reqAllCards() 
     echo json_encode(reqAllCards()); //on va echo le tableau json de la table 'cartes'
 }
+
 if(isset($_GET['white'])){
-        echo json_encode(reqWhiteCards());
-    }
+    echo json_encode(reqWhiteCards());
+}
 
 if(isset($_GET['red'])){
-        echo json_encode(reqRedCards());
-    }
+    echo json_encode(reqRedCards());
+}
 
 if(isset($_GET['black'])){
     echo json_encode(reqBlackCards());
@@ -46,13 +46,14 @@ if(isset($_GET['enchant'])){
     echo json_encode(reqEnchantCards());
 }
 
-if(isset($_GET['planeswalker'])){
-    echo json_encode(reqPlaneswalkerCards());
+if(isset($_GET['planes'])){
+    echo json_encode(reqPlanesCards());
 }
 
 if(isset($_GET['land'])){
     echo json_encode(reqLandCards());
 }
+
 
 // if(isset($_GET['type'])== "crea"){
 //     echo "Vous avez choisi créature";
@@ -271,14 +272,14 @@ if(isset($_GET['land'])){
         return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
     };
 
-    function reqPlaneswalkerCards()
+    function reqPlanesCards()
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE type='Planeswalker'"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM cartes WHERE type LIKE 'Legendary Planeswalker%'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte

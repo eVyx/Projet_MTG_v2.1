@@ -151,6 +151,23 @@ color: #88CC88;
 
 
 /* ---------------------------------------------------------------------------------- */
+.bloc .select {
+    display: flex;
+    flex-direction: column;
+    align-items : center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+.select {
+    position: relative;
+    width: 350px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid #CED4DA;
+}
+
 
 .format {
     font-family: 'made_evolve_sansbold';
@@ -159,6 +176,15 @@ color: #88CC88;
     align-items: center;
     margin: 30px;
     font-size: 25px;
+}
+
+select {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding-left: 15px;
+    color: #555555;
+    cursor: pointer;
 }
 
 .format .form {

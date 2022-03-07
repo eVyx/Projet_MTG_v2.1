@@ -1,6 +1,6 @@
 // C'est le fichier qu'on va appeler pour l'API
 //Afficher la liste des catégories
-//url api
+
 const url = '../API/api_cards.php?ALL'; //on va stocker l'adresse qui récupère toutes les cartes (api_cards.php)
 const urlW = '../API/api_cards.php?white'; //on va stocker l'adresse qui récupère toutes les cartes (api_cards.php)
 const urlR = '../API/api_cards.php?red';//on va stocker l'adresse qui récupère toutes les cartes (api_cards.php)
@@ -14,6 +14,7 @@ let urlSorcery = '../API/api_cards.php?sorcery';
 let urlEnchant = '../API/api_cards.php?enchant';
 let urlPlanes = '../API/api_cards.php?planes';
 let urlLand = '../API/api_cards.php?land';
+
 
 async function showCardsApi() {
     zone.innerHTML = "";
@@ -335,11 +336,4 @@ async function showLandCards() {
     }
 };
 
-// instant.addEventListener('click', showTypeCards);
-
-
-// let crea = document.querySelector('#crea')
-// crea.addEventListener("click", function(){
-//     console.log("1,2,3")
-// });
 // showCardsApi();
