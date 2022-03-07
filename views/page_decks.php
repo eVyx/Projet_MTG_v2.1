@@ -24,7 +24,6 @@
 <div class="format">
         <br><br>
         <form action="" method="GET">
-            Sélectionner le type : 
             <select id="typeCards" name="type">   
                 <option id="selection" value="selection">Sélectionner le type</option>
                 <option id="creature" value="creature"> Créature</option>
