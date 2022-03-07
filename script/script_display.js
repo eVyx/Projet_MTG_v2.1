@@ -168,8 +168,9 @@ let zone = document.querySelector('#zone');
 let white = document.querySelector('#white');
 white.addEventListener('click', showWhiteCards);
 
+
 let red = document.querySelector('#red');
-red.addEventListener('click', showWhiteCards);
+red.addEventListener('click', showRedCards);
 
 let black = document.querySelector('#black');
 black.addEventListener('click', showBlackCards);
