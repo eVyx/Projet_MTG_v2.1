@@ -236,7 +236,7 @@ async function showInstantCards() {
 };
 
 async function showSorceryCards() {
-    zone.zoneHTML = "";
+    zone.innerHTML = "";
     // On stock l'url de l'API json 
     const data = await fetch(urlSorcery); //await = permet d'attendre le chargement de la page
     // On va stocker le json
