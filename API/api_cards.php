@@ -121,7 +121,7 @@ if(isset($_GET['land'])){
             die('Erreur : ' . $e->getMessage());
         }
         //retourne une Arraylist
-        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+        return $output; //on retourne le tableau
     }
 
     function reqBlackCards()

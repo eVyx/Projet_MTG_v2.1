@@ -141,7 +141,7 @@ async function showGreenCards() {
 // document = page html (DOM) ; querySelector permet de récupérer du contenu html ciblé par le CSS cf. page_decks.php
 
 let zone = document.querySelector('#zone');
-// fonction récupération et affichage du json dans la page
+
 
 let white = document.querySelector('#white');
 white.addEventListener('click', showWhiteCards);
@@ -296,7 +296,7 @@ async function showPlanesCards() {
 };
 
 async function showLandCards() {
-    zone.zoneHTML = "";
+    zone.innerHTML = "";
     // On stock l'url de l'API json 
     const data = await fetch(urlLand); //await = permet d'attendre le chargement de la page
     // On va stocker le json
