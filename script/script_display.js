@@ -1,13 +1,8 @@
 // C'est le fichier qu'on va appeler pour l'API
 //Afficher la liste des catégories
 
-<<<<<<< Updated upstream
 const url = '../API/api_cards.php?ALL'; //on va stocker l'adresse "ALL" qui récupère toutes les cartes et créer la variable "ALL" qui va être vérifier dans l'API
 const urlW = '../API/api_cards.php?white';
-=======
-const url = '../API/api_cards.php?ALL'; //on va stocker l'adresse qui récupère toutes les cartes (api_cards.php)
-const urlW = '../API/api_cards.php?white'; //on va stocker l'adresse qui récupère toutes les cartes blanches (api_cards.php)
->>>>>>> Stashed changes
 const urlR = '../API/api_cards.php?red';
 const urlB = '../API/api_cards.php?black';
 const urlU = '../API/api_cards.php?blue';
