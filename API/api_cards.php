@@ -65,19 +65,19 @@ if(isset($_GET['land'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
+            //connexion à la Base de données mtg_project!!!!!!!!!!!!!!!!
             include('../utils/connexionBdd.php');
             //requete SQL
             $requete = "SELECT * FROM cartes"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
-            //variable $output (Arraylist) contenant le résultat de la requéte
+            //variable $output (Arraylist) contenant le résultat de la requéte!!!!!!!!!!!!!!!!!
             $output = $reponse->fetchAll(PDO::FETCH_ASSOC); // dans la variable output on va stocker dans un tableau toutes les résulats de la requête
         }
         catch (Exception $e) // catch: arrête le script et affiche les erreurs
         {
             die('Erreur : ' . $e->getMessage());
-        }
+        };
         //retourne une Arraylist
         return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
     }
