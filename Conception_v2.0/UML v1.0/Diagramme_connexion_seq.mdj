@@ -1702,7 +1702,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8EqPzO/L+q/o="
 							},
-							"name": "Role2"
+							"name": "Role2",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
