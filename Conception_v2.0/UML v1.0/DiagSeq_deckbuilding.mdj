@@ -96,7 +96,7 @@
 											"left": 200,
 											"top": 16,
 											"width": 1249,
-											"height": 833,
+											"height": 801,
 											"nameLabel": {
 												"$ref": "AAAAAAF8EqPzPfMCNbM="
 											},
@@ -145,7 +145,7 @@
 															"top": 47,
 															"width": 62.736328125,
 															"height": 13,
-															"text": "User"
+															"text": "Membre"
 														},
 														{
 															"_type": "LabelView",
@@ -202,14 +202,14 @@
 													"left": 404,
 													"top": 80,
 													"width": 1,
-													"height": 706
+													"height": 737
 												}
 											],
 											"font": "Arial;13;0",
 											"left": 368,
 											"top": 40,
 											"width": 72.736328125,
-											"height": 746,
+											"height": 777,
 											"nameCompartment": {
 												"$ref": "AAAAAAF8EqU25/MbzHc="
 											},
@@ -428,14 +428,14 @@
 													"left": 1180,
 													"top": 80,
 													"width": 1,
-													"height": 680
+													"height": 737
 												}
 											],
 											"font": "Arial;13;0",
 											"left": 1144,
 											"top": 40,
 											"width": 72.736328125,
-											"height": 720,
+											"height": 777,
 											"nameCompartment": {
 												"$ref": "AAAAAAF8Eqgo6vNyhxo="
 											},
@@ -2126,7 +2126,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF8EqPzPPL/u3k="
 									},
-									"name": "User",
+									"name": "Membre",
 									"represent": {
 										"$ref": "AAAAAAF8EqU25/MYFyU="
 									},
@@ -2195,8 +2195,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF8EqPzO/L+q/o="
 							},
-							"name": "Role1",
-							"type": ""
+							"name": "Role1"
 						},
 						{
 							"_type": "UMLAttribute",
