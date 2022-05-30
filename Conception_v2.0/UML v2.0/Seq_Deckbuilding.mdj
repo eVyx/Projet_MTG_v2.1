@@ -58,12 +58,6 @@
 										{
 											"_type": "UMLActivationView",
 											"_id": "AAAAAAF8EqmQgfPfsfE=",
-											"_parent": {
-												"$ref": "AAAAAAF8EqmQgfPbNP0="
-											},
-											"model": {
-												"$ref": "AAAAAAF8EqmQgfPaY1E="
-											},
 											"font": "Source Sans Pro;15;0",
 											"showShadow": false,
 											"left": 804,
@@ -2608,7 +2602,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8EqPzO/L+q/o="
 							},
-							"name": "Role3"
+							"name": "Role3",
+							"type": ""
 						}
 					]
 				}
