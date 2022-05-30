@@ -65,7 +65,7 @@ if(isset($_GET['land'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project!!!!!!!!!!!!!!!!
+            //connexion à la Base de données mtg_project!
             include('../utils/connexionBdd.php');
             //requete SQL
             $requete = "SELECT * FROM cartes"; // on va stocker dans la variable requete la requête sql

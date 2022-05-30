@@ -6,7 +6,7 @@ const urlW = '../API/api_cards.php?white';
 const urlR = '../API/api_cards.php?red';
 const urlB = '../API/api_cards.php?black';
 const urlU = '../API/api_cards.php?blue';
-const urlG = '../API/api_cards.php?green ';
+const urlG = '../API/api_cards.php?green';
 
 let urlCreature = '../API/api_cards.php?creature';
 let urlInstant = '../API/api_cards.php?instant';
@@ -34,7 +34,7 @@ async function showCardsApi() {
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
     }
-}
+}   
 
 async function showWhiteCards() {
     zone.innerHTML = "";
@@ -136,6 +136,32 @@ async function showGreenCards() {
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
     }
 }
+
+
+async function showCreatureCards() {
+    zone.innerHTML = "";
+    // On stock l'url de l'API json 
+    const data = await fetch(urlCreature); //await = permet d'attendre le chargement de la page
+    // On va stocker le json
+    const json = await data.json(); //.json permet d'instancier un tableau avec la variable
+    // console.log(json)
+
+    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
+
+    // On a crée une boucle pour parcourir tout le fichier json
+    for (let i in json) {
+        // On va stocker l'id de l'image à afficher
+        url_image = json[i].urlImage;
+        // afficher les images dans zone
+        zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
+        //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
+    }
+};
+
+
+
+
+
 
 // zone pour afficher le contenu de l'api
 // document = page html (DOM) ; querySelector permet de récupérer du contenu html ciblé par le CSS cf. page_decks.php

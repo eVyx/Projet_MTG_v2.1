@@ -5,7 +5,7 @@ $pageContent = file_get_contents("https://mtgjson.com/api/v5/GRN.json");
 $jsonData = json_decode($pageContent); # Met en forme les données reçues
 $keys = array(); # Tableau allant contenir nos codes d'extensions
 
-$db = new PDO('mysql:host=localhost;dbname=mtg_project', 'root', ''); # Création de l'objet représentant la BDD, on passe les identifiants en paramètres
+$db = new PDO('mysql:host=localhost;dbname=mtg_project_v2.0', 'root', ''); # Création de l'objet représentant la BDD, on passe les identifiants en paramètres
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); # Définit le mode exception sur cette base de données (utilisation du bloc try/catch)
 
 foreach ($jsonData->data->cards as $card) { # On parcourt tout les codes d'extension récupérés
@@ -51,7 +51,7 @@ foreach ($jsonData->data->cards as $card) { # On parcourt tout les codes d'exten
 
     echo "Carte allant etre insérée : " . $nom . " /coutManaText: " . $coutManaText . " " . $str_color . " <br>";
 
-    $sql = 'INSERT INTO cartes (`color`,`nom`,`codeExtension`,`type`,`rarete`,`coutTotalMana`,`coutManaText`,`forceCreature`, `enduranceCreature`, `text`,`urlImage`) VALUES(?,?,?,?,?,?,?,?,?,?,?)';
+    $sql = 'INSERT INTO carte (`color_carte`,`nom_carte`,`codeExtension_carte`,`type_carte`,`rarete_carte`,`coutTotalMana_carte`,`coutManaText_carte`,`forceCreature_carte`, `enduranceCreature_carte`, `text_carte`,`urlImage_carte`) VALUES(?,?,?,?,?,?,?,?,?,?,?)';
     $query = $db->prepare($sql);
     $query->execute(array($str_color, $nom, $codeExtension, $type, $rarete, $coutTotalMana,$coutManaText, $forceCreature, $enduranceCreature, $text, $urlImage));
 }
