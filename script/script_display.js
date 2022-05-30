@@ -15,6 +15,8 @@ let urlEnchant = '../API/api_cards.php?enchant';
 let urlPlanes = '../API/api_cards.php?planes';
 let urlLand = '../API/api_cards.php?land';
 
+let urlCreatureCombo = '../API/api_cards.php?creatures';
+
 
 async function showCardsApi() {
     zone.innerHTML = "";
@@ -22,7 +24,6 @@ async function showCardsApi() {
     const data = await fetch(url); //await = permet d'attendre le chargement de la page
     // On va stocker le json
     const json = await data.json(); //On instancie un tableau avec ".json"
-    console.log(json)
 
     let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
 
@@ -145,10 +146,8 @@ async function showGreenCards() {
 
 let zone = document.querySelector('#zone');
 
-
 let white = document.querySelector('#white');
 white.addEventListener('click', showWhiteCards);
-
 
 let red = document.querySelector('#red');
 red.addEventListener('click', showRedCards);
@@ -162,8 +161,6 @@ blue.addEventListener('click', showBlueCards);
 let green = document.querySelector('#green');
 green.addEventListener('click', showGreenCards);
 
-
-
 let type = document.querySelector('#typeCards')
 type.addEventListener('click', typeCardsSelector);
 
@@ -174,8 +171,11 @@ async function typeCardsSelector(){ //function qui récupère l'index du select 
         if (select == 0)
             showSelectionCards();
     
+        // else if (select == 1)
+        //     showCreatureCards();
+            
         else if (select == 1)
-            showCreatureCards();
+            showCreatureCombo()
 
         else if (select == 2)
             showInstantCards();
@@ -302,6 +302,27 @@ async function showLandCards() {
     zone.innerHTML = "";
     // On stock l'url de l'API json 
     const data = await fetch(urlLand); //await = permet d'attendre le chargement de la page
+    // On va stocker le json
+    const json = await data.json(); //.json permet d'instancier un tableau avec la variable
+    // console.log(json)
+
+    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
+
+    // On a crée une boucle pour parcourir tout le fichier json
+    for (let i in json) {
+        // On va stocker l'id de l'image à afficher
+        url_image = json[i].urlImage_carte;
+        // afficher les images dans zone
+        zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
+        //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
+    };
+};
+
+
+async function showCreatureCombo(){
+    zone.innerHTML = "";
+    // On stock l'url de l'API json 
+    const data = await fetch(urlCreatureCombo); //await = permet d'attendre le chargement de la page
     // On va stocker le json
     const json = await data.json(); //.json permet d'instancier un tableau avec la variable
     // console.log(json)
