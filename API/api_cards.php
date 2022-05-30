@@ -54,10 +54,29 @@ if(isset($_GET['land'])){
     echo json_encode(reqLandCards());
 }
 
-if(isset($_GET['creatures'])){ // $_GET récupère le paramètre créature dans l'url (si la valeur existe). Si c'est vrai dans l'URL
+if(isset($_GET['creatures'])){ 
     echo json_encode(reqCreatureCombo());
 }
 
+if(isset($_GET['instants'])){ 
+    echo json_encode(reqInstantCombo());
+}
+
+if(isset($_GET['sorcerys'])){ 
+    echo json_encode(reqSorceryCombo());
+}
+
+if(isset($_GET['enchants'])){ 
+    echo json_encode(reqEnchantCombo());
+}
+
+if(isset($_GET['planess'])){ 
+    echo json_encode(reqPlanesCombo());
+}
+
+if(isset($_GET['lands'])){ 
+    echo json_encode(reqLandsCombo());
+}
 
 
 // if(isset($_GET['type'])== "crea"){
@@ -319,6 +338,27 @@ if(isset($_GET['creatures'])){ // $_GET récupère le paramètre créature dans 
         return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
     };
 
+    // function reqCreatureComboWhite()
+    // {        
+    //     try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
+    //     {   
+    //         //connexion à la Base de données mtg_project
+    //         include('../utils/connexionBdd.php');
+    //         //requete SQL
+    //         $requete = "SELECT * FROM carte WHERE color_carte LIKE 'W%' AND type_carte LIKE 'Creature%'"; // on va stocker dans la variable requete la requête sql
+    //         // Execution de la requéte SQL.
+    //         $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
+    //         //variable $output (Arraylist) contenant le résultat de la requéte
+    //         $output = $reponse->fetchAll(PDO::FETCH_ASSOC); // dans la variable output on va stocker dans un tableau toutes les résulats de la requête
+    //     }
+    //     catch (Exception $e) // catch: arrête le script et affiche les erreurs
+    //     {
+    //         die('Erreur : ' . $e->getMessage());
+    //     }
+    //     //retourne une Arraylist
+    //     return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+    // };
+
     function reqCreatureCombo()
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
@@ -340,7 +380,108 @@ if(isset($_GET['creatures'])){ // $_GET récupère le paramètre créature dans 
         return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
     };
 
+    function reqInstantCombo()
+    {        
+        try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
+        {   
+            //connexion à la Base de données mtg_project
+            include('../utils/connexionBdd.php');
+            //requete SQL
+            $requete = "SELECT * FROM carte WHERE color_carte LIKE 'R%' AND type_carte LIKE 'Instant%'"; // on va stocker dans la variable requete la requête sql
+            // Execution de la requéte SQL.
+            $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
+            //variable $output (Arraylist) contenant le résultat de la requéte
+            $output = $reponse->fetchAll(PDO::FETCH_ASSOC); // dans la variable output on va stocker dans un tableau toutes les résulats de la requête
+        }
+        catch (Exception $e) // catch: arrête le script et affiche les erreurs
+        {
+            die('Erreur : ' . $e->getMessage());
+        }
+        //retourne une Arraylist
+        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+    };
 
+    function reqSorceryCombo()
+    {        
+        try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
+        {   
+            //connexion à la Base de données mtg_project
+            include('../utils/connexionBdd.php');
+            //requete SQL
+            $requete = "SELECT * FROM carte WHERE color_carte LIKE 'R%' AND type_carte LIKE 'Sorcery%'"; // on va stocker dans la variable requete la requête sql
+            // Execution de la requéte SQL.
+            $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
+            //variable $output (Arraylist) contenant le résultat de la requéte
+            $output = $reponse->fetchAll(PDO::FETCH_ASSOC); // dans la variable output on va stocker dans un tableau toutes les résulats de la requête
+        }
+        catch (Exception $e) // catch: arrête le script et affiche les erreurs
+        {
+            die('Erreur : ' . $e->getMessage());
+        }
+        //retourne une Arraylist
+        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+    };
 
+    function reqEnchantCombo()
+    {        
+        try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
+        {   
+            //connexion à la Base de données mtg_project
+            include('../utils/connexionBdd.php');
+            //requete SQL
+            $requete = "SELECT * FROM carte WHERE color_carte LIKE 'R%' AND type_carte LIKE 'Enchantment%'"; // on va stocker dans la variable requete la requête sql
+            // Execution de la requéte SQL.
+            $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
+            //variable $output (Arraylist) contenant le résultat de la requéte
+            $output = $reponse->fetchAll(PDO::FETCH_ASSOC); // dans la variable output on va stocker dans un tableau toutes les résulats de la requête
+        }
+        catch (Exception $e) // catch: arrête le script et affiche les erreurs
+        {
+            die('Erreur : ' . $e->getMessage());
+        }
+        //retourne une Arraylist
+        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+    };
 
+    function reqPlanesCombo()
+    {        
+        try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
+        {   
+            //connexion à la Base de données mtg_project
+            include('../utils/connexionBdd.php');
+            //requete SQL
+            $requete = "SELECT * FROM carte WHERE color_carte LIKE 'R%' AND type_carte LIKE 'Legendary Planeswalker%'"; // on va stocker dans la variable requete la requête sql
+            // Execution de la requéte SQL.
+            $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
+            //variable $output (Arraylist) contenant le résultat de la requéte
+            $output = $reponse->fetchAll(PDO::FETCH_ASSOC); // dans la variable output on va stocker dans un tableau toutes les résulats de la requête
+        }
+        catch (Exception $e) // catch: arrête le script et affiche les erreurs
+        {
+            die('Erreur : ' . $e->getMessage());
+        }
+        //retourne une Arraylist
+        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+    };
+
+    function reqLandsCombo()
+    {        
+        try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
+        {   
+            //connexion à la Base de données mtg_project
+            include('../utils/connexionBdd.php');
+            //requete SQL
+            $requete = "SELECT * FROM carte WHERE color_carte LIKE 'R%' AND type_carte LIKE 'Land%'"; // on va stocker dans la variable requete la requête sql
+            // Execution de la requéte SQL.
+            $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
+            //variable $output (Arraylist) contenant le résultat de la requéte
+            $output = $reponse->fetchAll(PDO::FETCH_ASSOC); // dans la variable output on va stocker dans un tableau toutes les résulats de la requête
+        }
+        catch (Exception $e) // catch: arrête le script et affiche les erreurs
+        {
+            die('Erreur : ' . $e->getMessage());
+        }
+        //retourne une Arraylist
+        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+    };
 ?>
