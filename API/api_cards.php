@@ -68,7 +68,7 @@ if(isset($_GET['land'])){
             //connexion à la Base de données mtg_project!
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte!!!!!!!!!!!!!!!!!
@@ -89,7 +89,7 @@ if(isset($_GET['land'])){
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE color IN ('W','R/W','B/W','U/W','G/W')"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE color_carte IN ('W','R/W','B/W','U/W','G/W')"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -110,7 +110,7 @@ if(isset($_GET['land'])){
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE color IN ('R','R/W','B/R','R/U','G/R')"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE color_carte IN ('R','R/W','B/R','R/U','G/R')"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -131,7 +131,7 @@ if(isset($_GET['land'])){
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE color IN ('B','B/W','B/R','B/R','B/G')"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE color_carte IN ('B','B/W','B/R','B/R','B/G')"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -152,7 +152,7 @@ if(isset($_GET['land'])){
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes  WHERE color IN ('U','U/W','R/U','B/U','G/U')"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE color_carte IN ('U','U/W','R/U','B/U','G/U')"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -173,7 +173,7 @@ if(isset($_GET['land'])){
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE color IN ('G','G/W','G/R','B/G','G/U')"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE color_carte IN ('G','G/W','G/R','B/G','G/U')"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -195,7 +195,7 @@ if(isset($_GET['land'])){
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE type LIKE 'Creature%'"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE type_carte LIKE 'Creature%'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -216,7 +216,7 @@ if(isset($_GET['land'])){
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE type='Instant'"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE type_carte='Instant'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -237,7 +237,7 @@ if(isset($_GET['land'])){
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE type='Sorcery'"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE type_carte='Sorcery'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -258,7 +258,7 @@ if(isset($_GET['land'])){
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE type LIKE 'Enchantment%'"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE type_carte LIKE 'Enchantment%'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -279,7 +279,7 @@ if(isset($_GET['land'])){
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE type LIKE 'Legendary Planeswalker%'"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE type_carte LIKE 'Legendary Planeswalker%'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -300,7 +300,7 @@ if(isset($_GET['land'])){
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE type LIKE 'Land%'"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE type_carte LIKE 'Land%'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte

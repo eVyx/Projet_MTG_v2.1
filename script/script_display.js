@@ -22,14 +22,15 @@ async function showCardsApi() {
     const data = await fetch(url); //await = permet d'attendre le chargement de la page
     // On va stocker le json
     const json = await data.json(); //On instancie un tableau avec ".json"
-    // console.log(json)
+    console.log(json)
 
     let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
 
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
+
         /// afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -49,7 +50,7 @@ async function showWhiteCards() {
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -62,14 +63,15 @@ async function showRedCards() {
     const data = await fetch(urlR); //await = permet d'attendre le chargement de la page
     // On va stocker le json
     const json = await data.json(); //.json permet d'instancier un tableau avec la variable
-    // console.log(json)
 
     let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
 
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
+        
+
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -89,7 +91,7 @@ async function showBlackCards() {
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -109,7 +111,7 @@ async function showBlueCards() {
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -130,37 +132,12 @@ async function showGreenCards() {
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
     }
 }
-
-
-async function showCreatureCards() {
-    zone.innerHTML = "";
-    // On stock l'url de l'API json 
-    const data = await fetch(urlCreature); //await = permet d'attendre le chargement de la page
-    // On va stocker le json
-    const json = await data.json(); //.json permet d'instancier un tableau avec la variable
-    // console.log(json)
-
-    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
-
-    // On a crée une boucle pour parcourir tout le fichier json
-    for (let i in json) {
-        // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
-        // afficher les images dans zone
-        zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
-        //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
-    }
-};
-
-
-
-
 
 
 // zone pour afficher le contenu de l'api
@@ -221,7 +198,7 @@ function showSelectionCards() {
     zone.innerHTML = "";
 };
 
-async function showCreatureCards() {
+async function showCreatureCards(){
     zone.innerHTML = "";
     // On stock l'url de l'API json 
     const data = await fetch(urlCreature); //await = permet d'attendre le chargement de la page
@@ -234,11 +211,11 @@ async function showCreatureCards() {
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
-    }
+    };
 };
 
 async function showInstantCards() {
@@ -254,11 +231,11 @@ async function showInstantCards() {
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
-    }
+    };
 };
 
 async function showSorceryCards() {
@@ -274,11 +251,11 @@ async function showSorceryCards() {
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
-    }
+    };
 };
 
 async function showEnchantCards() {
@@ -294,11 +271,11 @@ async function showEnchantCards() {
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
-    }
+    };
 };
 
 async function showPlanesCards() {
@@ -314,11 +291,11 @@ async function showPlanesCards() {
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
-    }
+    };
 };
 
 async function showLandCards() {
@@ -334,11 +311,11 @@ async function showLandCards() {
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
-    }
+    };
 };
 
 // showCardsApi();
