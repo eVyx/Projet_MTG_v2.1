@@ -22,11 +22,12 @@
             <ul>
                 <li><a href="page_signIn">Bibliothèque</a> </li>
                 <li><a href="../HTML_CSS/page_login.html">Decks</a></li>
+                <li><a href="../HTML_CSS/page_login.html">Règles</a></li>
             </ul>
             <div class="logoMonCompte"><img src="../Images/icon_mon_compte.png" alt="" width="40px" height="40px" />
                 <a href="../HTML_CSS/page_login.html"></a>
             </div>
-            <div class="monCompte"><a href="../HTML_CSS/page_login.html">Mon Compte</a>
+            <div class="monCompte">Mon Compte
             </div>
         </nav>
     </header>

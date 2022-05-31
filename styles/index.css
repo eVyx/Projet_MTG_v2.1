@@ -63,6 +63,7 @@ body {
     justify-content: flex-start;
     font-size: 17px;
     font-family: 'made_evolve_sansbold';
+    text-decoration: none;
 }
 
 .navbar h1 {
@@ -109,7 +110,7 @@ body {
 
 
 /* .navbar .logoMonCompte:hover .navbar .MonCompte {
-  color: #88CC88;
+    color: #88CC88;
 }
 */
 
@@ -118,13 +119,19 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-family: 'made_evolve_sansregular'
+    font-family: 'made_evolve_sansregular';
+    text-decoration-style: none;
+    color: white;
+};
+
+.navbar .logoMonCompte :hover {
+    content: url("../Images/icon_mon_compte_green.png");
 }
 
 .navbar ul {
     display: flex;
     align-items: center;
-    margin-left: 100px;
+    margin-left: 50px;
     margin-right: 500px;
     list-style-type: none;
     font-family: 'made_evolve_sansregular'
@@ -147,6 +154,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    color: rgb(255,255,255);
 }
 
 
