@@ -1,4 +1,6 @@
 <?php
+    include('../utils/connexionBdd.php');
+
     header("Access-Control-Allow-Origin: *"); // C'est la commande qui va nous permettre de rendre accessible le json
     //json error
     $tab = array( //On crée simplement un tableau d'un json d'erreur
@@ -364,7 +366,7 @@ if(isset($_GET['lands'])){
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
             //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
+            
             //requete SQL
             $requete = "SELECT * FROM carte WHERE color_carte LIKE 'R%' AND type_carte LIKE 'Creature%'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
