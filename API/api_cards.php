@@ -1,5 +1,7 @@
 <?php
-    include('../utils/connexionBdd.php');
+    include('../utils/connexionBdd.php'); // La variable $bdd se retrouve dans le fichier connexionbdd.php
+    //factorisation : pour permettre de simplifier les fonctions
+
 
     header("Access-Control-Allow-Origin: *"); // C'est la commande qui va nous permettre de rendre accessible le json
     //json error
@@ -9,77 +11,76 @@
     //test si l'url contient le paramètre 'ALL'
 if (isset($_GET['ALL'])) {
     //afficher et encoder un json le résultat de la méthode reqAllCards() 
-    echo json_encode(reqAllCards()); //on va echo le tableau json de la table 'cartes'
+    echo json_encode(reqAllCards($bdd)); //on va echo le tableau json de la table 'cartes'
 }
 
 if(isset($_GET['white'])){
-    echo json_encode(reqWhiteCards());
+    echo json_encode(reqWhiteCards($bdd));
 }
 
 if(isset($_GET['red'])){
-    echo json_encode(reqRedCards());
+    echo json_encode(reqRedCards($bdd));
 }
 
 if(isset($_GET['black'])){
-    echo json_encode(reqBlackCards());
+    echo json_encode(reqBlackCards($bdd));
 }
 
 if(isset($_GET['blue'])){
-    echo json_encode(reqBlueCards());
+    echo json_encode(reqBlueCards($bdd));
 }
 
 if(isset($_GET['green'])){ // recupère les paramètres quand l'API est appelé
-    echo json_encode(reqGreenCards());
+    echo json_encode(reqGreenCards($bdd));
 }
 
 if(isset($_GET['creature'])){ // $_GET récupère le paramètre créature dans l'url (si la valeur existe). Si c'est vrai dans l'URL
-    echo json_encode(reqCreatureCards());
+    echo json_encode(reqCreatureCards($bdd));
 }
 
 if(isset($_GET['instant'])){
-    echo json_encode(reqInstantCards());
+    echo json_encode(reqInstantCards($bdd));
 }
 
 if(isset($_GET['sorcery'])){
-    echo json_encode(reqSorceryCards());
+    echo json_encode(reqSorceryCards($bdd));
 }
 
 if(isset($_GET['enchant'])){
-    echo json_encode(reqEnchantCards());
+    echo json_encode(reqEnchantCards($bdd));
 }
 
 if(isset($_GET['planes'])){
-    echo json_encode(reqPlanesCards());
+    echo json_encode(reqPlanesCards($bdd));
 }
 
 if(isset($_GET['land'])){
-    echo json_encode(reqLandCards());
+    echo json_encode(reqLandCards($bdd));
 }
 
 if(isset($_GET['creatures'])){ 
-    echo json_encode(reqCreatureCombo());
+    echo json_encode(reqCreatureCombo($bdd));
 }
 
 if(isset($_GET['instants'])){ 
-    echo json_encode(reqInstantCombo());
+    echo json_encode(reqInstantCombo($bdd));
 }
 
 if(isset($_GET['sorcerys'])){ 
-    echo json_encode(reqSorceryCombo());
+    echo json_encode(reqSorceryCombo($bdd));
 }
 
 if(isset($_GET['enchants'])){ 
-    echo json_encode(reqEnchantCombo());
+    echo json_encode(reqEnchantCombo($bdd));
 }
 
 if(isset($_GET['planess'])){ 
-    echo json_encode(reqPlanesCombo());
+    echo json_encode(reqPlanesCombo($bdd));
 }
 
 if(isset($_GET['lands'])){ 
-    echo json_encode(reqLandsCombo());
+    echo json_encode(reqLandsCombo($bdd));
 }
-
 
 // if(isset($_GET['type'])== "crea"){
 //     echo "Vous avez choisi créature";
@@ -87,12 +88,10 @@ if(isset($_GET['lands'])){
 // }
 
 //fonction qui retourne le contenu de la table "cartes" dans un tableau
-    function reqAllCards()
+    function reqAllCards($bdd)
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project!
-            include('../utils/connexionBdd.php');
             //requete SQL
             $requete = "SELECT * FROM carte"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
@@ -108,12 +107,10 @@ if(isset($_GET['lands'])){
         return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
     }
 
-    function reqWhiteCards()
+    function reqWhiteCards($bdd)
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
             //requete SQL
             $requete = "SELECT * FROM carte WHERE color_carte IN ('W','R/W','B/W','U/W','G/W')"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
@@ -129,7 +126,7 @@ if(isset($_GET['lands'])){
         return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
     }
 
-    function reqRedCards()
+    function reqRedCards($bdd)
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
@@ -150,7 +147,7 @@ if(isset($_GET['lands'])){
         return $output; //on retourne le tableau
     }
 
-    function reqBlackCards()
+    function reqBlackCards($bdd)
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
@@ -171,7 +168,7 @@ if(isset($_GET['lands'])){
         return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
     }
 
-    function reqBlueCards()
+    function reqBlueCards($bdd)
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
@@ -192,7 +189,7 @@ if(isset($_GET['lands'])){
         return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
     };
 
-    function reqGreenCards()
+    function reqGreenCards($bdd)
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
@@ -214,7 +211,7 @@ if(isset($_GET['lands'])){
     };
 
 
-    function reqCreatureCards()
+    function reqCreatureCards($bdd)
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
@@ -235,7 +232,7 @@ if(isset($_GET['lands'])){
         return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
     };
 
-    function reqInstantCards()
+    function reqInstantCards($bdd)
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
@@ -256,7 +253,7 @@ if(isset($_GET['lands'])){
         return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
     };
 
-    function reqSorceryCards()
+    function reqSorceryCards($bdd)
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
@@ -277,7 +274,7 @@ if(isset($_GET['lands'])){
         return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
     };
 
-    function reqEnchantCards()
+    function reqEnchantCards($bdd)
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
@@ -298,7 +295,7 @@ if(isset($_GET['lands'])){
         return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
     };
 
-    function reqPlanesCards()
+    function reqPlanesCards($bdd)
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
@@ -319,7 +316,7 @@ if(isset($_GET['lands'])){
         return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
     };
 
-    function reqLandCards()
+    function reqLandCards($bdd)
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
@@ -361,7 +358,7 @@ if(isset($_GET['lands'])){
     //     return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
     // };
 
-    function reqCreatureCombo()
+    function reqCreatureCombo($bdd)
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
