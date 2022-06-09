@@ -93,7 +93,7 @@ if(isset($_GET['lands'])){
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
             //requete SQL
-            $requete = "SELECT * FROM carte"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte"; // on va stocker dans la variable $requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte!!!!!!!!!!!!!!!!!

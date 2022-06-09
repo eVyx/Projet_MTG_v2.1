@@ -6,7 +6,7 @@ const urlW = '../API/api_cards.php?white'; //on va stocker l'adresse qui r√©cup√
 const urlR = '../API/api_cards.php?red';
 const urlB = '../API/api_cards.php?black';
 const urlU = '../API/api_cards.php?blue';
-const urlG = '../API/api_cards.php?green ';
+const urlG = '../API/api_cards.php?green';
 
 let urlCreature = '../API/api_cards.php?creature';
 let urlInstant = '../API/api_cards.php?instant';
