@@ -8,13 +8,12 @@ const urlB = '../API/api_cards.php?black';
 const urlU = '../API/api_cards.php?blue';
 const urlG = '../API/api_cards.php?green';
 
-let urlCreature = '../API/api_cards.php?creature';
-let urlInstant = '../API/api_cards.php?instant';
-let urlSorcery = '../API/api_cards.php?sorcery';
-let urlEnchant = '../API/api_cards.php?enchant';
-let urlPlanes = '../API/api_cards.php?planes';
-let urlLand = '../API/api_cards.php?land';
-
+const urlCreature = '../API/api_cards.php?creature';
+const urlInstant = '../API/api_cards.php?instant';
+const urlSorcery = '../API/api_cards.php?sorcery';
+const urlEnchant = '../API/api_cards.php?enchant';
+const urlPlanes = '../API/api_cards.php?planes';
+const urlLand = '../API/api_cards.php?land';
 
 async function showCardsApi() {
     zone.innerHTML = "";
@@ -24,12 +23,12 @@ async function showCardsApi() {
     const json = await data.json(); //On instancie un tableau avec ".json"
     // console.log(json)
 
-    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
+    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage_carte -> bdd)
 
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         /// afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -44,12 +43,12 @@ async function showWhiteCards() {
     const json = await data.json(); //.json permet d'instancier un tableau avec la variable
     // console.log(json)
 
-    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
+    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage_carte -> bdd)
 
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -64,12 +63,12 @@ async function showRedCards() {
     const json = await data.json(); //.json permet d'instancier un tableau avec la variable
     // console.log(json)
 
-    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
+    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage_carte -> bdd)
 
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -84,12 +83,12 @@ async function showBlackCards() {
     const json = await data.json(); //.json permet d'instancier un tableau avec la variable
     // console.log(json)
 
-    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
+    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage_carte -> bdd)
 
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -104,12 +103,12 @@ async function showBlueCards() {
     const json = await data.json(); //.json permet d'instancier un tableau avec la variable
     // console.log(json)
 
-    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
+    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage_carte -> bdd)
 
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -125,12 +124,12 @@ async function showGreenCards() {
     const json = await data.json(); //.json permet d'instancier un tableau avec la variable
     // console.log(json)
 
-    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
+    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage_carte -> bdd)
 
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -199,12 +198,12 @@ async function showCreatureCards() {
     const json = await data.json(); //.json permet d'instancier un tableau avec la variable
     // console.log(json)
 
-    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
+    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage_carte -> bdd)
 
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -219,12 +218,12 @@ async function showInstantCards() {
     const json = await data.json(); //.json permet d'instancier un tableau avec la variable
     // console.log(json)
 
-    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
+    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage_carte -> bdd)
 
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;//Nouvelle BDD 
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -239,12 +238,12 @@ async function showSorceryCards() {
     const json = await data.json(); //.json permet d'instancier un tableau avec la variable
     // console.log(json)
 
-    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
+    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage_carte -> bdd)
 
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -259,12 +258,12 @@ async function showEnchantCards() {
     const json = await data.json(); //.json permet d'instancier un tableau avec la variable
     // console.log(json)
 
-    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
+    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage_carte -> bdd)
 
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -279,12 +278,12 @@ async function showPlanesCards() {
     const json = await data.json(); //.json permet d'instancier un tableau avec la variable
     // console.log(json)
 
-    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
+    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage_carte -> bdd)
 
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
@@ -299,12 +298,12 @@ async function showLandCards() {
     const json = await data.json(); //.json permet d'instancier un tableau avec la variable
     // console.log(json)
 
-    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage -> bdd)
+    let url_image; //On crée une variable qui va stocker l'id de l'img (urlImage_carte -> bdd)
 
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage;
+        url_image = json[i].urlImage_carte;
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
