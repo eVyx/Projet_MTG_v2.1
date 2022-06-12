@@ -106,7 +106,47 @@ body {
 .navbar .logoMonCompte :hover {
     content: url("../Images/icon_mon_compte_green.png");
 }
+/* .navbar .logoMonCompte:hover .navbar .MonCompte {
+    color: #88CC88;
+}
+ */
 
+.navbar .MonCompte {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'made_evolve_sansregular';
+    text-decoration-style: none;
+    color: white;
+};
+.navbar ul {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 500px;
+    list-style-type: none;
+    font-family: 'made_evolve_sansregular'
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 30px;
+}
+
+.navbar ul li a:hover {
+    background-color: white;
+    color: black;
+    border-radius: 4px;
+    text-decoration: underline;
+}
+
+.navbar .monCompte {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* .navbar .logoMonCompte:hover .navbar .MonCompte {
 color: #88CC88;

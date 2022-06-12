@@ -8,16 +8,21 @@
     <title>Create decks</title>
 </head>
 <body>
-    <header> 
+<header>
         <nav class="navbar">
             <h1>LOGO</h1>
-                <ul>
-                    <li><a href="page_login">Sign In</a></li>
-                    <li><a href="page_login">Sign Up</a></li>
-                    <li><a href="page_signIn">Cartes</a> </li>               
-                    <li><a href="../MTG_Project/page_decks.html">Decks</a></li>             
-                </ul>
-            <h2>SEARCH BAR</h2>
+            <div class="titreSearch">SEARCH BAR</div>
+            <div class="searchBar">
+                <input type="text">
+            </div>
+            <ul>
+                <li><a href="page_signIn">Bibliothèque</a> </li>
+                <li><a href="page_decks">Decks</a></li>
+            </ul>
+            <div class="logoMonCompte"><img src="../Images/icon_mon_compte.png" alt="" width="40px" height="40px" />
+            </div>
+            <div class="monCompte">Mon Compte
+            </div>
         </nav>
     </header>
 

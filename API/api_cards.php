@@ -34,6 +34,8 @@ if(isset($_GET['green'])){ // recupère les paramètres quand l'API est appelé
     echo json_encode(reqGreenCards($bdd));
 }
 
+//----------------------------------------------------------------------------------------------------//
+
 if(isset($_GET['creature'])){ // $_GET récupère le paramètre créature dans l'url (si la valeur existe). Si c'est vrai dans l'URL
     echo json_encode(reqCreatureCards($bdd));
 }
@@ -57,6 +59,8 @@ if(isset($_GET['planes'])){
 if(isset($_GET['land'])){
     echo json_encode(reqLandCards($bdd));
 }
+
+//----------------------------------------------------------------------------------------------------//
 
 if(isset($_GET['creatures'])){ 
     echo json_encode(reqCreatureCombo($bdd));
@@ -93,7 +97,7 @@ if(isset($_GET['lands'])){
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
             //requete SQL
-            $requete = "SELECT * FROM carte"; // on va stocker dans la variable $requete la requête sql
+            $requete = "SELECT * FROM carte"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte!!!!!!!!!!!!!!!!!
@@ -130,9 +134,7 @@ if(isset($_GET['lands'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
-            //requete SQL
+            
             $requete = "SELECT * FROM carte WHERE color_carte IN ('R','R/W','B/R','R/U','G/R')"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
@@ -151,9 +153,7 @@ if(isset($_GET['lands'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
-            //requete SQL
+        
             $requete = "SELECT * FROM carte WHERE color_carte IN ('B','B/W','B/R','B/R','B/G')"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
@@ -172,8 +172,7 @@ if(isset($_GET['lands'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
+        
             //requete SQL
             $requete = "SELECT * FROM carte WHERE color_carte IN ('U','U/W','R/U','B/U','G/U')"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
@@ -193,8 +192,7 @@ if(isset($_GET['lands'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
+
             //requete SQL
             $requete = "SELECT * FROM carte WHERE color_carte IN ('G','G/W','G/R','B/G','G/U')"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
@@ -236,8 +234,7 @@ if(isset($_GET['lands'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
+            
             //requete SQL
             $requete = "SELECT * FROM carte WHERE type_carte='Instant'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
@@ -257,8 +254,7 @@ if(isset($_GET['lands'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
+        
             //requete SQL
             $requete = "SELECT * FROM carte WHERE type_carte='Sorcery'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
@@ -278,8 +274,7 @@ if(isset($_GET['lands'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
+    
             //requete SQL
             $requete = "SELECT * FROM carte WHERE type_carte LIKE 'Enchantment%'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
@@ -299,8 +294,7 @@ if(isset($_GET['lands'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
+        
             //requete SQL
             $requete = "SELECT * FROM carte WHERE type_carte LIKE 'Legendary Planeswalker%'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
@@ -320,9 +314,7 @@ if(isset($_GET['lands'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
-            //requete SQL
+       
             $requete = "SELECT * FROM carte WHERE type_carte LIKE 'Land%'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
@@ -362,7 +354,6 @@ if(isset($_GET['lands'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
             
             //requete SQL
             $requete = "SELECT * FROM carte WHERE color_carte LIKE 'R%' AND type_carte LIKE 'Creature%'"; // on va stocker dans la variable requete la requête sql
@@ -383,8 +374,7 @@ if(isset($_GET['lands'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
+    
             //requete SQL
             $requete = "SELECT * FROM carte WHERE color_carte LIKE 'R%' AND type_carte LIKE 'Instant%'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
@@ -404,8 +394,7 @@ if(isset($_GET['lands'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
+        
             //requete SQL
             $requete = "SELECT * FROM carte WHERE color_carte LIKE 'R%' AND type_carte LIKE 'Sorcery%'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
@@ -425,8 +414,7 @@ if(isset($_GET['lands'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
+        
             //requete SQL
             $requete = "SELECT * FROM carte WHERE color_carte LIKE 'R%' AND type_carte LIKE 'Enchantment%'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
@@ -446,8 +434,7 @@ if(isset($_GET['lands'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
+        
             //requete SQL
             $requete = "SELECT * FROM carte WHERE color_carte LIKE 'R%' AND type_carte LIKE 'Legendary Planeswalker%'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
@@ -467,8 +454,7 @@ if(isset($_GET['lands'])){
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   
-            //connexion à la Base de données mtg_project
-            include('../utils/connexionBdd.php');
+        
             //requete SQL
             $requete = "SELECT * FROM carte WHERE color_carte LIKE 'R%' AND type_carte LIKE 'Land%'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
