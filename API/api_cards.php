@@ -8,7 +8,7 @@
     //test si l'url contient le paramètre 'ALL'
 if (isset($_GET['ALL'])) { // $_GET : c'est la super globale qui permet d'aller lire (api_cards.php?ALL) ; le isset est en relation avec le $_GET
     //afficher et encoder un json le résultat de la méthode reqAllCards() 
-    echo json_encode(reqAllCards()); //on va echo le tableau json de la table 'cartes'
+    echo json_encode(reqAllCards()); //on va echo le tableau json de la table 'carte'
 }
 if(isset($_GET['white'])){
         echo json_encode(reqWhiteCards());
@@ -58,14 +58,14 @@ if(isset($_GET['land'])){
 
 
 
-// if(isset($_GET['type'])== "crea"){
+// if(isset($_GET['type_carte'])== "crea"){
 //     echo "Vous avez choisi créature";
-//     var_dump($_GET['type']);
+//     var_dump($_GET['type_carte']);
 // }
 
 
 
-//fonction qui retourne le contenu de la table "cartes" dans un tableau
+//fonction qui retourne le contenu de la table "carte" dans un tableau
 function reqAllCards()
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
@@ -73,7 +73,7 @@ function reqAllCards()
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -84,7 +84,7 @@ function reqAllCards()
             die('Erreur : ' . $e->getMessage());
         }
         //retourne une Arraylist
-        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+        return $output; //on retourne le tableau (contenu de la table 'carte' de la bdd)
     }
 
     function reqWhiteCards()
@@ -94,7 +94,7 @@ function reqAllCards()
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE color IN ('W','R/W','B/W','U/W','G/W')"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE color_carte IN ('W','R/W','B/W','U/W','G/W')"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -105,7 +105,7 @@ function reqAllCards()
             die('Erreur : ' . $e->getMessage());
         }
         //retourne une Arraylist
-        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+        return $output; //on retourne le tableau (contenu de la table 'carte' de la bdd)
     }
 
     function reqRedCards()
@@ -115,7 +115,7 @@ function reqAllCards()
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE color IN ('R','R/W','B/R','R/U','G/R')"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE color_carte IN ('R','R/W','B/R','R/U','G/R')"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -126,7 +126,7 @@ function reqAllCards()
             die('Erreur : ' . $e->getMessage());
         }
         //retourne une Arraylist
-        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+        return $output; //on retourne le tableau (contenu de la table 'carte' de la bdd)
     }
 
     function reqBlackCards()
@@ -136,7 +136,7 @@ function reqAllCards()
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE color IN ('B','B/W','B/R','B/R','B/G')"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE color_carte IN ('B','B/W','B/R','B/R','B/G')"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -147,7 +147,7 @@ function reqAllCards()
             die('Erreur : ' . $e->getMessage());
         }
         //retourne une Arraylist
-        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+        return $output; //on retourne le tableau (contenu de la table 'carte' de la bdd)
     }
 
     function reqBlueCards()
@@ -157,7 +157,7 @@ function reqAllCards()
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes  WHERE color IN ('U','U/W','R/U','B/U','G/U')"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte  WHERE color_carte IN ('U','U/W','R/U','B/U','G/U')"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -168,7 +168,7 @@ function reqAllCards()
             die('Erreur : ' . $e->getMessage());
         }
         //retourne une Arraylist
-        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+        return $output; //on retourne le tableau (contenu de la table 'carte' de la bdd)
     };
 
     function reqGreenCards()
@@ -178,7 +178,7 @@ function reqAllCards()
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE color IN ('G','G/W','G/R','B/G','G/U')"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE color_carte IN ('G','G/W','G/R','B/G','G/U')"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -189,7 +189,7 @@ function reqAllCards()
             die('Erreur : ' . $e->getMessage());
         }
         //retourne une Arraylist
-        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+        return $output; //on retourne le tableau (contenu de la table 'carte' de la bdd)
     };
 
     function reqCreatureCards()
@@ -199,7 +199,7 @@ function reqAllCards()
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE type='Creature'"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE type_carte='Creature'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -210,7 +210,7 @@ function reqAllCards()
             die('Erreur : ' . $e->getMessage());
         }
         //retourne une Arraylist
-        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+        return $output; //on retourne le tableau (contenu de la table 'carte' de la bdd)
     };
 
     function reqInstantCards()
@@ -220,7 +220,7 @@ function reqAllCards()
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE type='Instant'"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE type_carte='Instant'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -231,7 +231,7 @@ function reqAllCards()
             die('Erreur : ' . $e->getMessage());
         }
         //retourne une Arraylist
-        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+        return $output; //on retourne le tableau (contenu de la table 'carte' de la bdd)
     };
 
     function reqSorceryCards()
@@ -241,7 +241,7 @@ function reqAllCards()
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE type='Sorcery'"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE type_carte='Sorcery'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -252,7 +252,7 @@ function reqAllCards()
             die('Erreur : ' . $e->getMessage());
         }
         //retourne une Arraylist
-        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+        return $output; //on retourne le tableau (contenu de la table 'carte' de la bdd)
     };
 
     function reqEnchantCards()
@@ -262,7 +262,7 @@ function reqAllCards()
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE type='Enchant'"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE type_carte='Enchant'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -273,7 +273,7 @@ function reqAllCards()
             die('Erreur : ' . $e->getMessage());
         }
         //retourne une Arraylist
-        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+        return $output; //on retourne le tableau (contenu de la table 'carte' de la bdd)
     };
 
     function reqPlaneswalkerCards()
@@ -283,7 +283,7 @@ function reqAllCards()
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE type='Planeswalker'"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE type_carte='Planeswalker'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -294,7 +294,7 @@ function reqAllCards()
             die('Erreur : ' . $e->getMessage());
         }
         //retourne une Arraylist
-        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+        return $output; //on retourne le tableau (contenu de la table 'carte' de la bdd)
     };
 
     function reqLandCards()
@@ -304,7 +304,7 @@ function reqAllCards()
             //connexion à la Base de données mtg_project
             include('../utils/connexionBdd.php');
             //requete SQL
-            $requete = "SELECT * FROM cartes WHERE type='Land'"; // on va stocker dans la variable requete la requête sql
+            $requete = "SELECT * FROM carte WHERE type_carte='Land'"; // on va stocker dans la variable requete la requête sql
             // Execution de la requéte SQL.
             $reponse = $bdd->query($requete); // dans la variable reponse on va stocker l'éxécution de la requête sql
             //variable $output (Arraylist) contenant le résultat de la requéte
@@ -315,6 +315,6 @@ function reqAllCards()
             die('Erreur : ' . $e->getMessage());
         }
         //retourne une Arraylist
-        return $output; //on retourne le tableau (contenu de la table 'cartes' de la bdd)
+        return $output; //on retourne le tableau (contenu de la table 'carte' de la bdd)
     };
 ?>
