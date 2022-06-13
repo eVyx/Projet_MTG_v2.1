@@ -22,7 +22,6 @@
             <ul>
                 <li><a href="page_signIn">Bibliothèque</a> </li>
                 <li><a href="../HTML_CSS/page_login.html">Decks</a></li>
-                <li><a href="../HTML_CSS/page_login.html">Règles</a></li>
             </ul>
             <div class="logoMonCompte"><img src="../Images/icon_mon_compte.png" alt="" width="40px" height="40px" />
                 <a href="../HTML_CSS/page_login.html"></a>
