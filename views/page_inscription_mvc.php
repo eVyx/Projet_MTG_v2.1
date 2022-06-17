@@ -31,13 +31,13 @@
 
     <div class="blocInscription">
         <div class="box">
-            <form action="" class="formBloc">
+            <form action="controller_add_user.php" method="post" class="formBloc">
 
                 <h3><strong>Inscrivez-vous</strong></h3>
 
                 <div class="formGroupe">
                     <label for="utilisateur"><strong>Pseudo</strong></label>
-                    <input type="text" name="login" id="utilisateur" required maxlength="16">
+                    <input type="text" name="name" id="user" required maxlength="16">
                 </div>
 
                 <div class="formGroupe">
@@ -47,9 +47,8 @@
 
                 <div class="formGroupe">
                     <label for="mdp"><strong>E-mail</strong></label>
-                    <input type="text" name="mdp" id="mdp" required maxlength="16">
+                    <input type="text" name="mail" id="mail" required maxlength="100">
                 </div>
-
 
                 <div class="formGroupe">
                     <input type="submit" value="SUBSCRIBE" class="buttonSub">
