@@ -249,7 +249,6 @@ async function showSorceryCards() {
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
     }
 };
-
 async function showEnchantCards() {
     zone.innerHTML = "";
     // On stock l'url de l'API json 

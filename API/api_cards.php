@@ -298,6 +298,7 @@ function reqAllCards()
     };
 
     function reqLandCards()
+    
     {        
         try //try permet d'éxécuter tant qu'il n'y pas d'erreur dans la fonction
         {   

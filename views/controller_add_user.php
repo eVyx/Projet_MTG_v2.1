@@ -2,8 +2,8 @@
      //import
     //  require_once '../utils/connexionbdd.php';
     include '../models/model_user.php';
-     
-     include '/views/page_inscription_mvc.php';
+    
+    include '/views/page_inscription_mvc.php';
     //test logique:
     //variable qui va contenir les messages erreurs
     //test si on à cliqué sur le bouton submit (test si les champs existes)
