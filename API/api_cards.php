@@ -31,15 +31,15 @@ if(isset($_GET['green'])){
 }
 
 if(isset($_GET['creature'])){
-    echo json_encode(reqGreenCards());
+    echo json_encode(reqCreatureCards());
 }
 
 if(isset($_GET['instant'])){
-    echo json_encode(reqGreenCards());
+    echo json_encode(reqInstantCards());
 }
 
 if(isset($_GET['sorcery'])){
-    echo json_encode(reqGreenCards());
+    echo json_encode(reqSorceryCards());
 }
 
 if(isset($_GET['enchant'])){
