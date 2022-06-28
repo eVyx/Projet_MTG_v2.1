@@ -203,12 +203,13 @@ async function showCreatureCards() {
     // On a crée une boucle pour parcourir tout le fichier json
     for (let i in json) {
         // On va stocker l'id de l'image à afficher
-        url_image = json[i].urlImage_carte;
+        url_image = json[i].urlImage_carte;//Nouvelle BDD 
         // afficher les images dans zone
         zone.innerHTML += "<img src=https://api.scryfall.com/cards/" + url_image + "?format=image\ height=\"30%\" width=\"10%\"></img >";
         //zoneHTML va ajouter le contenu de la balise à l'intérieur de la div "zone" cf. page_decks.php
     }
 };
+
 
 async function showInstantCards() {
     zone.innerHTML = "";
